@@ -619,28 +619,94 @@ body {
 }
 
 /* =========================================
-   Media Queries (Responsividade para Celular)
+   Media Queries (Responsividade Completa)
    ========================================= */
+
+/* Tablets e Desktops Pequenos (1024px) */
+@media (max-width: 1024px) {
+    .container { width: 92%; }
+    .hero__title { font-size: 3.5rem; }
+}
+
+/* Celulares e Tablets (768px) - AJUSTADO CONFORME PRINTS */
 @media (max-width: 768px) {
-    .qa-box, .contact-grid { 
-        grid-template-columns: 1fr; 
+    /* Header: Empilhando elementos para caber na tela */
+    .header__container {
+        flex-direction: column;
+        height: auto;
+        padding: 1.2rem 0;
     }
-    
+
+    .nav__list {
+        margin-top: 1rem;
+        gap: 0.8rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav__link { font-size: 0.9rem; }
+
+    /* Ajuste de Espaçamento: Evita que o Header cubra o conteúdo */
+    .hero, 
+    .founders, 
+    .qa-section, 
+    .dev-section, 
+    .vallis-manifesto, 
+    .services, 
+    .page-content {
+        padding-top: 200px !important; /* Compensa a altura do menu empilhado */
+        height: auto;
+    }
+
+    /* Tipografia: Evita quebras de linha gigantes nos títulos */
+    .hero__title { font-size: 2.5rem; line-height: 1.2; }
+    .page-title { font-size: 2.2rem; margin-bottom: 1.5rem; }
+    .section-title { font-size: 2rem; margin-bottom: 2rem; }
+
+    /* Grids: Transforma tudo em 1 coluna */
+    .grid, 
+    .grid--3, 
+    .founders__grid, 
+    .contact-grid, 
+    .qa-box {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
+
+    /* Inversão Visual (QA/Dev) */
     .qa-box--reverse {
         display: flex;
         flex-direction: column-reverse;
     }
 
-    .hero__title { font-size: 3rem; }
-    
-    .nav__list { display: none; } /* Oculta menu no mobile para futuro botão hamburguer */
-    
+    /* Manifesto e Stats */
     .manifesto-stats {
         flex-direction: column;
         gap: 2rem;
     }
+
+    .manifesto-card { padding: 2rem 1.5rem; }
+
+    /* FAQ */
+    .faq .faq-btn { padding: 1.2rem; font-size: 1rem; }
+}
+
+/* Celulares Pequenos (480px) */
+@media (max-width: 480px) {
+    .hero__title { font-size: 2rem; }
+    .page-title { font-size: 1.8rem; }
     
-    .manifesto-card {
-        padding: 2rem;
+    .btn {
+        width: 100%;
+        text-align: center;
     }
+
+    .card { padding: 1.5rem; }
+
+    .code-window__body {
+        font-size: 0.75rem;
+        overflow-x: auto; /* Garante que o código não quebre o layout */
+    }
+
+    .stat-item span { font-size: 2rem; }
 }
