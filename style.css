@@ -1,0 +1,646 @@
+/* =========================================
+   Variáveis e Configurações Globais
+   ========================================= */
+:root {
+    --bg-dark: #0a0f18;
+    --bg-card: #121a28;
+    --color-cyan: #00d2ff;
+    --color-green: #00ff87;
+    --color-text: #e0e0e0;
+    --color-white: #ffffff;
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card__image--founder {
+    width: 100px; /* Ou o tamanho que estava definido antes */
+    height: 100px;
+    border-radius: 50%; /* Faz a foto ficar redonda */
+    object-fit: cover; /* Garante que a foto não fique esticada */
+    margin-bottom: 1.5rem;
+    border: 2px solid var(--color-cyan); /* Opcional: adiciona uma borda na cor da logo */
+}
+
+/* =========================================
+   Utilitários e Tipografia
+   ========================================= */
+.text-gradient {
+    background: linear-gradient(90deg, var(--color-cyan), var(--color-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.color-cyan { color: var(--color-cyan); }
+.color-green { color: var(--color-green); }
+.w-100 { width: 100%; }
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-white);
+}
+
+.section-title--left {
+    text-align: left;
+    margin-top: 0;
+}
+
+.page-title {
+    font-size: 3.5rem;
+    color: var(--color-cyan);
+    margin-bottom: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.page-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    font-size: 1.2rem;
+    color: rgba(224, 224, 224, 0.7);
+}
+
+.page-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: rgba(224, 224, 224, 0.8);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.grid--3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* =========================================
+   Header & Navegação
+   ========================================= */
+.header {
+    background-color: rgba(10, 15, 24, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 210, 255, 0.1);
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.header__logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-white);
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.header__logo span { color: var(--color-cyan); }
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav__link {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav__link:hover, .nav__link--active {
+    color: var(--color-green);
+    text-shadow: 0 0 10px rgba(0, 255, 135, 0.5);
+}
+
+.btn-nav {
+    border: 1px solid var(--color-cyan);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    color: var(--color-cyan) !important;
+}
+
+.btn-nav:hover {
+    background-color: rgba(0, 210, 255, 0.1);
+}
+
+/* =========================================
+   Hero Section (Página Inicial)
+   ========================================= */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle at center, var(--bg-card) 0%, var(--bg-dark) 100%);
+    padding-top: 80px;
+}
+
+.hero__title {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    color: var(--color-white);
+    line-height: 1.1;
+}
+
+.hero__description {
+    font-size: 1.2rem;
+    max-width: 650px;
+    margin: 0 auto 2.5rem auto;
+    color: rgba(224, 224, 224, 0.7);
+}
+
+/* =========================================
+   Fundadores
+   ========================================= */
+.founders {
+    padding: 6rem 0;
+    background-color: #0b111a;
+}
+
+.founders__intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.founders__subtitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.founders__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+/* =========================================
+   Engenharia, QA e Desenvolvimento
+   ========================================= */
+.qa-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-card) 100%);
+}
+
+.dev-section {
+    padding: 6rem 0;
+    background: linear-gradient(180deg, var(--bg-card) 0%, var(--bg-dark) 100%);
+}
+
+.qa-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Inverte a ordem visual na seção de desenvolvimento */
+.qa-box--reverse {
+    direction: ltr; 
+}
+
+.qa-box__content .qa-list {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.qa-box__content .qa-list li {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.qa-box__content .qa-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-green);
+    font-weight: bold;
+}
+
+/* Terminal / Janela de Código */
+.code-window {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.code-window__header {
+    background-color: #2d2d2d;
+    padding: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+.code-window__header span {
+    width: 12px; height: 12px; border-radius: 50%;
+}
+
+.code-window__header span:nth-child(1) { background-color: #ff5f56; }
+.code-window__header span:nth-child(2) { background-color: #ffbd2e; }
+.code-window__header span:nth-child(3) { background-color: #27c93f; }
+
+.code-window__body {
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #d4d4d4;
+    font-size: 0.9rem;
+}
+
+/* Cores alternativas para o terminal de Dev */
+.code-window--alt .color-cyan { color: var(--color-green); }
+.code-window--alt .color-green { color: var(--color-cyan); }
+
+/* =========================================
+   Manifesto Vallis Tech
+   ========================================= */
+.vallis-manifesto {
+    padding: 6rem 0;
+    background-color: #0d131f;
+}
+
+.manifesto-card {
+    background-color: var(--bg-card);
+    padding: 4rem;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 210, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.manifesto-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.stat-item span {
+    font-size: 2.5rem;
+    font-weight: 800;
+    display: block;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: var(--color-cyan);
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    font-weight: bold;
+}
+
+/* =========================================
+   Sobre Nós (Textos Informativos)
+   ========================================= */
+.about__vallis-info {
+    max-width: 900px;
+    margin: 0 auto 4rem auto;
+}
+
+/* =========================================
+   Cards (Serviços, Pilares, Projetos)
+   ========================================= */
+.services, .page-content { padding: 6rem 0; }
+
+.card {
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-cyan);
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.1);
+}
+
+.card__icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.card__title {
+    color: var(--color-white);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.card__list {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.card__list li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.card__list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-green);
+}
+
+/* Card Específico: Fundadores */
+.card--founder {
+    text-align: center;
+    border-top: 4px solid var(--color-cyan);
+}
+
+.card--founder .card__avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--color-cyan), var(--color-green));
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--bg-dark);
+}
+
+.card--founder .card__role {
+    color: var(--color-green);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* Card Específico: Projetos (Interatividade JS) */
+.card--project {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card__image {
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card--project:hover .card__image { transform: scale(1.03); }
+
+.card__hidden-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease, margin-top 0.3s ease;
+    background-color: rgba(0,0,0,0.2);
+    padding: 0 1rem;
+    border-radius: 8px;
+}
+
+.card__hidden-content.is-expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-left: 3px solid var(--color-cyan);
+}
+
+.card__hidden-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.card__footer {
+    margin-top: auto;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__tag {
+    background-color: rgba(0, 210, 255, 0.1);
+    color: var(--color-cyan);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border: 1px solid var(--color-cyan);
+}
+
+/* =========================================
+   FAQ (Acordeão)
+   ========================================= */
+.faq { padding: 4rem 0; }
+
+.faq .faq-container { max-width: 800px; margin: 0 auto; }
+
+.faq .faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 210, 255, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq .faq-btn {
+    width: 100%;
+    text-align: left;
+    background-color: var(--bg-card);
+    color: var(--color-white);
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.faq .faq-btn:hover { background-color: #172133; }
+
+.faq .faq-btn .faq-icon {
+    color: var(--color-cyan);
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.faq .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background-color: var(--bg-dark);
+    padding: 0 1.5rem;
+}
+
+.faq .faq-content p { margin-bottom: 1.5rem; color: rgba(224, 224, 224, 0.8); }
+
+.faq .faq-content.active {
+    max-height: 300px;
+    padding: 1rem 1.5rem;
+}
+
+/* =========================================
+   Página de Contato e Formulários
+   ========================================= */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+}
+
+.form-group { margin-bottom: 1.5rem; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--color-cyan);
+    font-weight: bold;
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    background-color: rgba(10, 15, 24, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--color-white);
+    font-family: var(--font-main);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
+}
+
+.social-links { list-style: none; margin-top: 1.5rem; }
+
+.social-links li { margin-bottom: 1rem; }
+
+.social-links li a {
+    color: var(--color-cyan);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links li a:hover { color: var(--color-green); }
+
+/* =========================================
+   Botões Globais
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn--primary {
+    background: linear-gradient(90deg, var(--color-cyan), var(--color-green));
+    color: var(--bg-dark);
+    box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+}
+
+.btn--primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 255, 135, 0.5);
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: var(--color-green);
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.btn-text:hover { color: var(--color-cyan); }
+
+/* =========================================
+   Footer
+   ========================================= */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: rgba(224, 224, 224, 0.4);
+}
+
+/* =========================================
+   Media Queries (Responsividade para Celular)
+   ========================================= */
+@media (max-width: 768px) {
+    .qa-box, .contact-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .qa-box--reverse {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .hero__title { font-size: 3rem; }
+    
+    .nav__list { display: none; } /* Oculta menu no mobile para futuro botão hamburguer */
+    
+    .manifesto-stats {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .manifesto-card {
+        padding: 2rem;
+    }
+}

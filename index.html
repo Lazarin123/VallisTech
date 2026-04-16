@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vallis Tech | Transformando o Futuro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <a href="index.html" class="header__logo">VALLIS <span>TECH</span></a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link nav__link--active">Início</a></li>
+                    <li class="nav__item"><a href="sobre.html" class="nav__link">Sobre Nós</a></li>
+                    <li class="nav__item"><a href="projetos.html" class="nav__link">Projetos</a></li>
+                    <li class="nav__item"><a href="contato.html" class="nav__link btn-nav">Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container hero__content">
+                <h1 class="hero__title">Acelerando a sua <span class="text-gradient">Evolução Digital</span></h1>
+                <p class="hero__description">Desenvolvemos soluções tecnológicas de alto impacto que conectam a sua ideia aos melhores resultados do mercado, unindo design sofisticado e código limpo.</p>
+                <a href="projetos.html" class="btn btn--primary">Ver Nossos Projetos</a>
+            </div>
+        </section>
+
+        <section class="founders">
+            <div class="container">
+                <h2 class="section-title">Quem Faz Acontecer</h2>
+                <div class="founders__intro">
+                    <h3 class="founders__subtitle text-gradient">Como a Vallis Tech Nasceu</h3>
+                    <p class="founders__text">A ideia da Vallis Tech surgiu diretamente das trincheiras da tecnologia. A partir de uma forte vivência com suporte e Quality Assurance (QA), ficou evidente que o mercado carecia de softwares construídos com uma base sólida e livre de falhas críticas. Unimos essa mentalidade rigorosa com a paixão pelo desenvolvimento para criar produtos escaláveis, modernos e com foco total na experiência do usuário.</p>
+                </div>
+                <div class="founders__grid">
+                    <div class="card card--founder">
+                        <img src="./Perfil.jpg" alt="Foto Samuel" class="card__image--founder">
+                        <h3 class="card__title">Samuel Lazarin</h3>
+                        <p class="card__role">Co-Fundador & Engenheiro de Software</p>
+                        <p class="card__text">Especialista em arquitetura front-end e tecnologias como React, TypeScript e SCSS. Traz sua visão afiada de QA para garantir excelência técnica.</p>
+                    </div>
+                    <div class="card card--founder">
+                        <img src="/" alt="Foto Murilo" class="card__image--founder">
+                        <h3 class="card__title">Murilo Guedes</h3>
+                        <p class="card__role">Co-Fundador & Engenheiro de Software</p>
+                        <p class="card__text">Focado em infraestrutura e escalabilidade, garantindo que cada solução suporte o crescimento acelerado dos nossos clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="qa-section">
+            <div class="container">
+                <div class="qa-box">
+                    <div class="qa-box__content">
+                        <h2 class="section-title section-title--left">Engenharia e <span class="text-gradient">Qualidade (QA)</span></h2>
+                        <p class="page-text">Na Vallis Tech, não apenas escrevemos código; nós o testamos à exaustão. Acreditamos que um software de sucesso é aquele que não falha quando o cliente mais precisa.</p>
+                        <ul class="qa-list">
+                            <li><strong>Testes Automatizados:</strong> Cobertura rigorosa para evitar regressões.</li>
+                            <li><strong>Code Review:</strong> Nenhuma linha vai para produção sem dupla verificação.</li>
+                            <li><strong>Clean Code:</strong> Manutenibilidade garantida para o futuro da sua aplicação.</li>
+                        </ul>
+                    </div>
+                    <div class="qa-box__visual">
+                        <div class="code-window">
+                            <div class="code-window__header"><span></span><span></span><span></span></div>
+                            <div class="code-window__body">
+                                <code><span class="color-cyan">import</span> { Quality } <span class="color-cyan">from</span> 'vallis-tech';</code><br>
+                                <code><span class="color-cyan">const</span> project = <span class="color-green">new</span> Quality();</code><br>
+                                <code>project.runTests(); <span class="color-green">// 100% Passed</span></code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dev-section">
+            <div class="container">
+                <div class="qa-box qa-box--reverse">
+                    <div class="qa-box__visual">
+                        <div class="code-window code-window--alt">
+                            <div class="code-window__header"><span></span><span></span><span></span></div>
+                            <div class="code-window__body">
+                                <code><span class="color-cyan">const</span> techStack = [</code><br>
+                                <code>&nbsp;&nbsp;'React', 'NextJS', 'TypeScript',</code><br>
+                                <code>&nbsp;&nbsp;'NodeJS', 'SASS'</code><br>
+                                <code>];</code><br>
+                                <code>techStack.<span class="color-green">deploy</span>({ performance: <span class="color-cyan">'High'</span> });</code>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="qa-box__content">
+                        <h2 class="section-title section-title--left">Desenvolvimento <span class="text-gradient">Ágil e Escalável</span></h2>
+                        <p class="page-text">Utilizamos as tecnologias mais modernas do ecossistema JavaScript para entregar interfaces ultra-rápidas e backends prontos para suportar milhares de acessos simultâneos.</p>
+                        <ul class="qa-list">
+                            <li><strong>Arquitetura Moderna:</strong> Uso extensivo de React e TypeScript para tipagem robusta.</li>
+                            <li><strong>Performance First:</strong> Otimização de carregamento e experiência do usuário (Core Web Vitals).</li>
+                            <li><strong>Metodologias Ágeis:</strong> Entregas incrementais onde você acompanha cada evolução.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="vallis-manifesto">
+            <div class="container">
+                <div class="manifesto-card">
+                    <h2 class="section-title">O Compromisso Vallis Tech</h2>
+                    <p class="page-text" style="text-align: center;">Não somos apenas uma software house; somos o seu braço tecnológico. Na Vallis Tech, entendemos que cada linha de código deve servir a um propósito de negócio. Nossa intenção é criar um ecossistema digital onde a inovação não encontra barreiras técnicas. Seja para uma startup validando sua primeira ideia ou uma empresa consolidada buscando modernização, entregamos o que há de mais avançado em engenharia de software.</p>
+                    <div class="manifesto-stats">
+                        <div class="stat-item"><span class="text-gradient">100%</span><p>Foco em Qualidade</p></div>
+                        <div class="stat-item"><span class="text-gradient">Modern</span><p>Tech Stack</p></div>
+                        <div class="stat-item"><span class="text-gradient">Clean</span><p>Code Architecture</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Vallis Tech. Todos os direitos reservados.</p>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
