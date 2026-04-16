@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fale Conosco | Vallis Tech</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <a href="index.html" class="header__logo">VALLIS <span>TECH</span></a>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="index.html" class="nav__link">Início</a>
+            </li>
+            <li class="nav__item">
+              <a href="sobre.html" class="nav__link">Sobre Nós</a>
+            </li>
+            <li class="nav__item">
+              <a href="projetos.html" class="nav__link">Projetos</a>
+            </li>
+            <li class="nav__item">
+              <a href="contato.html" class="nav__link nav__link--active btn-nav"
+                >Fale Conosco</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section class="contact">
+        <div class="container">
+          <h1 class="page-title">Vamos Iniciar Seu Projeto?</h1>
+          <p class="page-subtitle">
+            Preencha o formulário abaixo ou conecte-se conosco através das
+            nossas redes sociais.
+          </p>
+
+          <div class="contact-grid">
+            <div class="contact-form-container card">
+              <form
+                action="mailto:samuel.lazarin12@gmail.com"
+                method="post"
+                enctype="text/plain"
+                class="form"
+                id="contactForm"
+              >
+                <div class="form-group">
+                  <label for="nome">Nome Completo</label>
+                  <input
+                    type="text"
+                    id="nome"
+                    name="Nome"
+                    required
+                    placeholder="Digite seu nome"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Seu E-mail</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="Email"
+                    required
+                    placeholder="seu@email.com"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="tipo">Tipo de Projeto</label>
+                  <select id="tipo" name="Tipo_Projeto">
+                    <option value="web">Aplicação Web</option>
+                    <option value="mobile">Aplicativo Mobile</option>
+                    <option value="qa">Consultoria / QA</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="mensagem">Detalhes do Projeto</label>
+                  <textarea
+                    id="mensagem"
+                    name="Mensagem"
+                    rows="5"
+                    required
+                    placeholder="Conte-nos um pouco sobre a sua ideia..."
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn--primary w-100">
+                  Enviar Mensagem
+                </button>
+              </form>
+            </div>
+
+            <div class="contact-info">
+              <div class="card card--info">
+                <h3 class="card__title text-gradient">Conecte-se Conosco</h3>
+                <p class="card__text">
+                  Estamos sempre abertos para um bom papo sobre tecnologia,
+                  negócios e inovação.
+                </p>
+
+                <ul class="social-links">
+                  <li>
+                    <strong>E-mail:</strong> <br />
+                    <a href="mailto:samuel.lazarin12@gmail.com"
+                      >samuel.lazarin12@gmail.com</a
+                    >
+                  </li>
+                  <li>
+                    <strong>LinkedIn:</strong> <br />
+                    <a
+                      href="https://linkedin.com/in/samuel-lazarin/"
+                      target="_blank"
+                      >linkedin.com/in/samuel-lazarin/</a
+                    >
+                  </li>
+                  <li>
+                    <strong>GitHub:</strong> <br />
+                    <a href="#" target="_blank"
+                      >[Insira o link do GitHub da Vallis Tech aqui]</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Vallis Tech. Todos os direitos reservados.</p>
+    </footer>
+    <script src="../main.js"></script>
+  </body>
+</html>
