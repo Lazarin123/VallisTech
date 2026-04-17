@@ -31,12 +31,12 @@ body {
 }
 
 .card__image--founder {
-    width: 100px; /* Ou o tamanho que estava definido antes */
+    width: 100px;
     height: 100px;
-    border-radius: 50%; /* Faz a foto ficar redonda */
-    object-fit: cover; /* Garante que a foto não fique esticada */
+    border-radius: 50%;
+    object-fit: cover;
     margin-bottom: 1.5rem;
-    border: 2px solid var(--color-cyan); /* Opcional: adiciona uma borda na cor da logo */
+    border: 2px solid var(--color-cyan);
 }
 
 /* =========================================
@@ -162,13 +162,14 @@ body {
    Hero Section (Página Inicial)
    ========================================= */
 .hero {
-    height: 90vh;
+    height: 100vh; /* Aumentado para 100vh para comportar a flecha */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: radial-gradient(circle at center, var(--bg-card) 0%, var(--bg-dark) 100%);
     padding-top: 80px;
+    position: relative;
 }
 
 .hero__title {
@@ -184,6 +185,34 @@ body {
     max-width: 650px;
     margin: 0 auto 2.5rem auto;
     color: rgba(224, 224, 224, 0.7);
+}
+
+/* Indicador de Scroll (Adição Solicitada) */
+.hero__scroll {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    color: rgba(224, 224, 224, 0.5);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.arrow-down {
+    width: 15px;
+    height: 15px;
+    border-bottom: 2px solid var(--color-cyan);
+    border-right: 2px solid var(--color-cyan);
+    transform: rotate(45deg);
+    animation: scroll-bounce 2s infinite;
+}
+
+@keyframes scroll-bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0) rotate(45deg); }
+    40% { transform: translateY(-10px) rotate(45deg); }
+    60% { transform: translateY(-5px) rotate(45deg); }
 }
 
 /* =========================================
@@ -231,7 +260,6 @@ body {
     align-items: center;
 }
 
-/* Inverte a ordem visual na seção de desenvolvimento */
 .qa-box--reverse {
     direction: ltr; 
 }
@@ -286,12 +314,11 @@ body {
     font-size: 0.9rem;
 }
 
-/* Cores alternativas para o terminal de Dev */
 .code-window--alt .color-cyan { color: var(--color-green); }
 .code-window--alt .color-green { color: var(--color-cyan); }
 
 /* =========================================
-   Manifesto Vallis Tech
+   Manifesto Vollup Tech
    ========================================= */
 .vallis-manifesto {
     padding: 6rem 0;
@@ -383,24 +410,9 @@ body {
     color: var(--color-green);
 }
 
-/* Card Específico: Fundadores */
 .card--founder {
     text-align: center;
     border-top: 4px solid var(--color-cyan);
-}
-
-.card--founder .card__avatar {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(135deg, var(--color-cyan), var(--color-green));
-    border-radius: 50%;
-    margin: 0 auto 1.5rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--bg-dark);
 }
 
 .card--founder .card__role {
@@ -411,7 +423,6 @@ body {
     text-transform: uppercase;
 }
 
-/* Card Específico: Projetos (Interatividade JS) */
 .card--project {
     display: flex;
     flex-direction: column;
@@ -424,7 +435,7 @@ body {
     border-radius: 10px;
     margin-bottom: 1.5rem;
     transition: transform 0.3s ease;
-    overfflow: hidden;
+    overflow: hidden;
 }
 
 .card__image img {
@@ -452,11 +463,6 @@ body {
     margin-top: 1rem;
     padding: 1rem;
     border-left: 3px solid var(--color-cyan);
-}
-
-.card__hidden-content p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
 }
 
 .card__footer {
@@ -523,8 +529,6 @@ body {
     padding: 0 1.5rem;
 }
 
-.faq .faq-content p { margin-bottom: 1.5rem; color: rgba(224, 224, 224, 0.8); }
-
 .faq .faq-content.active {
     max-height: 300px;
     padding: 1rem 1.5rem;
@@ -556,26 +560,7 @@ body {
     border-radius: 8px;
     color: var(--color-white);
     font-family: var(--font-main);
-    transition: border-color 0.3s ease;
 }
-
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--color-cyan);
-    box-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
-}
-
-.social-links { list-style: none; margin-top: 1.5rem; }
-
-.social-links li { margin-bottom: 1rem; }
-
-.social-links li a {
-    color: var(--color-cyan);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.social-links li a:hover { color: var(--color-green); }
 
 /* =========================================
    Botões Globais
@@ -604,18 +589,6 @@ body {
     box-shadow: 0 8px 25px rgba(0, 255, 135, 0.5);
 }
 
-.btn-text {
-    background: none;
-    border: none;
-    color: var(--color-green);
-    font-weight: bold;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-}
-
-.btn-text:hover { color: var(--color-cyan); }
-
 /* =========================================
    Footer
    ========================================= */
@@ -627,18 +600,15 @@ body {
 }
 
 /* =========================================
-   Media Queries (Responsividade Completa)
+   Media Queries
    ========================================= */
 
-/* Tablets e Desktops Pequenos (1024px) */
 @media (max-width: 1024px) {
     .container { width: 92%; }
     .hero__title { font-size: 3.5rem; }
 }
 
-/* Celulares e Tablets (768px) - AJUSTADO CONFORME PRINTS */
 @media (max-width: 768px) {
-    /* Header: Empilhando elementos para caber na tela */
     .header__container {
         flex-direction: column;
         height: auto;
@@ -652,69 +622,34 @@ body {
         justify-content: center;
     }
 
-    .nav__link { font-size: 0.9rem; }
-
-    /* Ajuste de Espaçamento: Evita que o Header cubra o conteúdo */
-    .hero, 
-    .founders, 
-    .qa-section, 
-    .dev-section, 
-    .vallis-manifesto, 
-    .services, 
-    .page-content {
-        padding-top: 200px !important; /* Compensa a altura do menu empilhado */
+    .hero, .founders, .qa-section, .dev-section, .vallis-manifesto, .services, .page-content {
+        padding-top: 180px !important;
         height: auto;
     }
 
-    /* Tipografia: Evita quebras de linha gigantes nos títulos */
-    .hero__title { font-size: 2.5rem; line-height: 1.2; }
-    .page-title { font-size: 2.2rem; margin-bottom: 1.5rem; }
-    .section-title { font-size: 2rem; margin-bottom: 2rem; }
+    .hero__title { font-size: 2.5rem; }
+    
+    /* Esconde a flecha se o menu empilhado ocupar muito espaço */
+    .hero__scroll { margin-top: 2rem; }
 
-    /* Grids: Transforma tudo em 1 coluna */
-    .grid, 
-    .grid--3, 
-    .founders__grid, 
-    .contact-grid, 
-    .qa-box {
+    .grid, .grid--3, .founders__grid, .contact-grid, .qa-box {
         grid-template-columns: 1fr !important;
-        gap: 2rem;
     }
 
-    /* Inversão Visual (QA/Dev) */
     .qa-box--reverse {
         display: flex;
         flex-direction: column-reverse;
     }
 
-    /* Manifesto e Stats */
     .manifesto-stats {
         flex-direction: column;
         gap: 2rem;
     }
-
-    .manifesto-card { padding: 2rem 1.5rem; }
-
-    /* FAQ */
-    .faq .faq-btn { padding: 1.2rem; font-size: 1rem; }
 }
 
-/* Celulares Pequenos (480px) */
 @media (max-width: 480px) {
     .hero__title { font-size: 2rem; }
-    .page-title { font-size: 1.8rem; }
-    
-    .btn {
-        width: 100%;
-        text-align: center;
-    }
-
-    .card { padding: 1.5rem; }
-
-    .code-window__body {
-        font-size: 0.75rem;
-        overflow-x: auto; /* Garante que o código não quebre o layout */
-    }
-
-    .stat-item span { font-size: 2rem; }
+    .btn { width: 100%; text-align: center; }
+    /* Garante que a flecha não suma em telas pequenas, apenas diminui */
+    .hero__scroll p { font-size: 0.7rem; }
 }
