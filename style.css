@@ -28,6 +28,12 @@ body {
     line-height: 1.6;
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #00d2ff;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
